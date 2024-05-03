@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Temperature;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Device;
@@ -143,4 +145,37 @@ class DeviceController extends Controller
             return response()->json($result, 500);
         }
     }
+
+    public function TempStore(Request $request)
+{
+    try {
+        $request->validate([
+            'value' => 'required' // Atur validasi sesuai kebutuhan Anda
+        ]);
+
+        $temperature = Temperature::create([
+            'value' => $request->value
+        ]);
+
+        $message = 'Data temperature berhasil tersimpan';
+        $success = true;
+        $data = [
+            'temperature' => $temperature,
+            'message' => $message,
+            'success' => $success
+        ];
+
+        return response()->json($data, 201);
+    } catch (\Exception $e) {
+        $message = $e->getMessage();
+        $success = false;
+        $data = [
+            'message' => $message,
+            'success' => $success
+        ];
+
+        return response()->json($data, 500);
+    }
+}
+
 }
