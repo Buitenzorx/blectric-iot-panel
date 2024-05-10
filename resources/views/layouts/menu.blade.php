@@ -32,7 +32,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('temperatures') }}">
                     <i class="fas fa-temperature-high"></i>
-                    <span>Monitoring Temperature</span></a>
+                    <span>Monitoring Temperatures</span></a>
             </li>
 
             <!-- Nav Item - Device -->
