@@ -21,6 +21,12 @@
                     <span>Dashboard</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('dashboard') }}">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>LED Control</span></a>
+            </li>
+
             <!-- Nav Item - Saklar -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('saklar') }}">
